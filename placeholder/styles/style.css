@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	background-color: #fff;
+	height: 100%;
+}
+
+h1 {
+	font-family: 'Julius Sans One', serif;
+	font-size: 2.5em;
+	font-weight: 400;
+	color: #888;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.8em;
+	font-weight: 200;
+	color: #888;
+}
+
+.container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+
+header {
+	text-align:center;
+	margin: 0 auto;
+	display: block;
+}
+
+
+footer, .push {
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	height: 2em;
+}
+

@@ -1,0 +1,306 @@
+/* The file does not exist until some information is entered 
+below. Once information is entered and saved, the file will be created. */
+
+
+
+/* ---------- CSS RESET ---------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* ---------- END CSS RESET ---------- */
+
+
+
+
+
+
+
+/* Page */
+
+body {
+  background-color: #121214;
+}
+
+#the_page {
+  margin-top: 0;
+}
+
+a, h2, h3, p, .thumbName, #copyright, #imageInfos {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+h3 a {
+ font-size: 0.85em; 
+}
+
+.text {
+  margin-top: 0.5em;
+}
+
+.Nb_images {
+  font-size: 0.75em;
+}
+
+#menubar dt {
+  text-align: left;
+}
+
+#mbCategories a {
+  font-size: 0.85em;
+}
+
+
+a:hover {
+  color: #b3afa6;
+}
+
+#copyright, #copyright a {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4)
+}
+
+/* End of Page */
+
+
+/* Header */
+h1 {
+  font-family: 'Julius Sans One', serif;
+  font-size: 2em;
+  font-weight: 400;
+  color: #333;
+  padding: 30px 10px 0 0;
+        text-align: right;
+}
+
+h1::first-letter {
+  font-size: 1.025em;
+}
+
+#theHeader {
+  height: 75px;
+}
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 100px;
+  padding: 0;
+  height: auto;
+}
+
+.hidden-menu {
+  background-image:url('../../../images/nav.png');
+  height: auto;
+  display: none;
+  width: 170px;
+}
+
+.menu-tag {
+  float: left;
+  clear: both;
+  width: 170px;
+  margin: 0;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  background-color: rgba(70, 98, 15, 0.7);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #b2aea5;
+  cursor: pointer;
+}
+
+nav {
+  height: 100%;
+}
+
+nav ul {
+    width: 100%;
+    padding: 0;
+    opacity: 1.0;
+    height: 100%;
+    margin: 0;
+}
+nav ul li {
+    list-style: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #b2aea5;
+    font-size: 1.1em;
+    text-align: right;
+    padding: 15px 0 15px 0;
+    
+}
+
+nav a {
+    color: #b2aea5;
+}
+
+.menuitem {
+    padding-right: 5px;
+}
+
+div[class$="-border"] {
+  border-bottom: 5px solid #46620f;
+  visibility: hidden;
+}
+
+/* 
+when hovering over .menuitem element, if adjacent element is 
+#simon-border (etc), make border visible. CSS sibling selectors. 
+*/
+.menuitem:hover + .home-border,
+.menuitem:hover + .simon-border,
+.menuitem:hover + .store-border,
+.menuitem:hover + .gallery-border,
+.menuitem:hover + .creative-commons-border,
+.menuitem:hover + .contact-border {
+    visibility: visible;
+}
+
+/* End of Dropdown Menu */
+
+/* End of Header */
+
+
+
+/* Front Page & Nav */
+
+#menubar {
+  width: 15em;
+}
+
+.contentWithMenu {
+  margin-left: 17.5em;
+  margin-right: 2em;
+}
+
+#menubar dl, #menubar dd {
+  background-color: transparent;
+  border: 0;
+}
+
+#menubar dt,
+  h2
+{
+  background-color: #2b2b2b;
+  background-image: none;
+  border-bottom: 0;
+  color: #fff;
+}
+
+.icon {
+   display: none;
+}
+
+h3 > img {
+  display: none;
+}
+
+.thumbnailCategories {
+  background-color: #383838;
+}
+
+.thumbnailCategory {
+  border: 0;
+}
+
+.content .titrePage {
+  padding: 6px;
+  background-color: #2b2b2b;
+}
+
+
+/* End of Front Page & Nav */
+
+
+
+
+/* Album */
+
+.thumbLegend > img {
+  display: none;
+}
+
+.thumbnails {
+  padding-top: 20px;
+}
+
+.content, .thumbnails, .thumbnailCategories {
+  background-color: transparent;
+  border: 0;
+}
+
+.thumbnails .wrap2 {
+  border: 0;
+}
+
+#imageHeaderBar,
+#imageToolBar {
+  background-color: #383838;
+  width: 60%;
+}
+
+#imageToolBar {
+  margin: 0 auto 20px;
+}
+
+#imageHeaderBar {
+  margin: 0 auto;
+}
+
+
+/* End of Album */
