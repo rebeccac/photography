@@ -9,12 +9,16 @@
 	include('includes/main-front-page.php'); // <div class="main">
 ?>
 	
-	<div class="main-content">
+	<div class="landscape-main-content">
 		<div class="centred">
 			<img src="images/frontpage/katariina.jpg" alt="The Ruination of Fort Katariina">
 		</div>
 
-</div>
+	</div>
+	
+	<div class="portrait-main-content">
+			<img src="images/frontpage/boat.jpg" alt="Boat">
+	</div>
 
 	
  

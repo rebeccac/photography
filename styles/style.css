@@ -1,5 +1,3 @@
-/* Testing */
-
 /* ---------- CSS RESET ---------- */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -295,6 +293,7 @@ header {
 	position: absolute;
 	top: 10%;
 	height: 80%;
+	width: 100%;
 }
 
 .main {
@@ -315,92 +314,63 @@ footer {
 }
 
 
-/* ---------- FOLLOWING CSS FOR SINGLE FULL PAGE IMAGE ---------- */
+/* ---------- MEDIA QUERIES ---------- */
 
+/* Landscape */
+@media screen and (orientation:landscape) {
+    /* Landscape front page photo */
+	
+	.portrait-main-content {
+		display: none;
+	}
 
-.main-content {
-	display: table;
-	height: 100%;
+	.landscape-main-content {
+		display: table;
+		height: 100%;
+	}
+
+	.centred {
+	  display: table-cell;
+	  vertical-align: middle;
+	  width: 100%;
+	}
+
+	.centred img {
+		width: 100%;
+	    height: auto;
+	}
+
+	/* End of landscape front page photo */
 }
 
-.centred {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
+/* Portrait */
+@media screen and (orientation:portrait) {
+	/* Portrait front page photo */
+	
+	.landscape-main-content {
+		display: none;
+	}
+
+	.portrait-main-content {
+		min-width: 100%;
+		height: 100%;
+	}
+
+	.portrait-main-content img {
+		display: block;
+		margin: 0 auto;
+		width: auto;
+		height: 100%;
+	}
+
+	/* End of portrait front page photos */
 }
 
-.centred img {
-	width: 100%;
-    height: auto;
-}
-
-/* ---------- END CSS FOR SINGLE FULL PAGE IMAGE ---------- */
+/* ---------- END MEDIA QUERIES ---------- */
 
 
 
-/* ---------- FOLLOWING CSS FOR MULTIPLE BOX IMAGES ---------- */
-
-
-/*.main-content {
-	margin-top: 0;
-	padding-top: 0;
-	position: absolute;
-	width: 100%;
-	top: 15%;
-	height: 68%;
-}
-
-.main-content:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: -0.25em; 
-}
-
-.centred {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
-}
-
-.centred:before {
-	content: '';
-  	display: inline-block;
-  	height: 100%;
-  	vertical-align: middle;
-
-  	margin-right: -0.25em;  
-}
-
-#front-page-photo {
-	width: 100%;
-    height: auto;
-}
-
-.multiple-photos {
-	display: inline-block;
-	vertical-align: middle;
-	width: 100%;
-	height: 150px;
-	/*width: 900px;
-	height: 150px;
-	margin: 0 auto;
-}
-
-.boxes {
-	display: block;
-	width: 900px;
-	height: 150px;
-	margin: 0 auto;
-}
-
-.boxes img {
-	padding: 0 25px 0 25px;
-}*/
-
-/* ---------- END CSS FOR MULTIPLE BOX IMAGES ---------- */
-
+/* ---------- FOOTER ---------- */
 
 .social-media {
 	padding-top: 5px;
@@ -415,6 +385,7 @@ footer {
 	padding-top: 5px;
 }
 
+/* ---------- END OF FOOTER ---------- */
 
 
 
