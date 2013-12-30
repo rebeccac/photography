@@ -1,0 +1,63 @@
+/* ---------- FOLLOWING CSS FOR MULTIPLE BOX IMAGES ---------- */
+
+
+/*.main-content {
+	margin-top: 0;
+	padding-top: 0;
+	position: absolute;
+	width: 100%;
+	top: 15%;
+	height: 68%;
+}
+
+.main-content:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em; 
+}
+
+.centred {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.centred:before {
+	content: '';
+  	display: inline-block;
+  	height: 100%;
+  	vertical-align: middle;
+
+  	margin-right: -0.25em;  
+}
+
+#front-page-photo {
+	width: 100%;
+    height: auto;
+}
+
+.multiple-photos {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	height: 150px;
+	/*width: 900px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+.boxes {
+	display: block;
+	width: 900px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+.boxes img {
+	padding: 0 25px 0 25px;
+}*/
+
+/* ---------- END CSS FOR MULTIPLE BOX IMAGES ---------- */
+
