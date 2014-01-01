@@ -12,7 +12,7 @@
 <div class="content">
 	
 	<div class="content-left">
-		<img src="images/snow.jpg" width="100%" alt="Snow photo">
+		<img src="images/flora.jpg" width="100%" alt="Flora photo">
 	</div>
 	<div class="content-right-container">
 		<div class="content-right">

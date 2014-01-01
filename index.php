@@ -17,7 +17,7 @@
 	</div>
 	
 	<div class="portrait-main-content">
-			<img src="images/frontpage/boat.jpg" alt="Boat">
+			<img src="images/frontpage/ruins_of_katariina.jpg" alt="The Ruins of Katariina">
 	</div>
 
 	
