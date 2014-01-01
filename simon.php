@@ -1,12 +1,13 @@
 <?php 
-	include('includes/dtd.php');?>
+	include('config.php');
+	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography</title>
 <?php
-	include('includes/head.php');
-	include('includes/nav.php');
-	include('includes/header.php');
+	include($root.'includes/head.php');
+	include($root.'includes/nav.php');
+	include($root.'includes/header.php');
 	
-	include('includes/main.php'); // <div class="main">
+	include($root.'includes/main.php');
 ?>
 
 <div class="content">
@@ -39,5 +40,5 @@
 	</div>
 </div>
  <?php
-include('includes/footer.php');
+include($root.'includes/footer.php');
  ?>

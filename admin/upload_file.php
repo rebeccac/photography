@@ -1,19 +1,24 @@
 <?php 
-	include('../includes/dtd.php');?>
+	include('../config.php');
+	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography - Upload a Front Page Image</title>
-	<link rel="stylesheet" href="styles/admin_style.css">
-
-		<link href='http://fonts.googleapis.com/css?family=Julius+Sans+One|Quicksand:300,400|Cinzel:400,700,900|Open+Sans:400,600' rel='stylesheet' type='text/css'>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-	</head>
-	<body>
-<?php
-
-	include('../includes/nav.php');
-	include('../includes/header.php');
+	<?php
+	include($root.'includes/head.php');
+	include($root.'includes/nav.php');
+	include($root.'includes/header.php');
 	
-	include('../includes/main.php'); 
+	include($root.'includes/main.php'); 
+
+
+
+
+	function displayThumbnail($photo) {
+		echo '<img src="'.$photo.'" width = "200px">';
+		echo "<br><br>";
+
+	}
+
+
 
 	$allowedExts = array("jpeg", "jpg", "png");
 	$temp = explode(".", $_FILES["file"]["name"]);
@@ -35,7 +40,6 @@
 	    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
 	    echo "Type: " . $_FILES["file"]["type"] . "<br>";
 	    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-	    // echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 
 	    if (file_exists("../images/frontpage/" . $_FILES["file"]["name"]))
 	      {
@@ -51,29 +55,19 @@
 	      
 	      displayThumbnail($photo);
 
-	      // echo "Stored in: " . "images/frontpage/" . $_FILES["file"]["name"];
-
 	      ?>
 	      <div>
 				<p><span class="emphasis">Stored in: </span><span><?= "images/frontpage/" . $_FILES["file"]["name"]; ?></span></p>
 	      </div>
 	      <?php
-
-	      }
-	    }
-	  }
+		}
+	}
+}
 	else
 	  {
 	  echo "Invalid file";
 	  }
 
 
-
-	function displayThumbnail($photo) {
-		echo '<img src="'.$photo.'" width = "200px">';
-		echo "<br><br>";
-
-	}
-
-include('includes/footer.php');
+include($root.'includes/footer.php');
  ?>
