@@ -455,6 +455,37 @@ footer {
 	padding: 30px;
 }
 
+.admin-menu-option {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: 15px;
+	margin: 15px;
+	background-color: #ddd;
+	border: 1px solid #bbb;
+}
+
+.admin-buttons {
+	display: block;
+	height: auto;
+	min-height: 155px;
+	text-align: center;
+}
+
+p.menu {
+	display: block;
+	font-family: Arial, sans-serif;
+	font-size: 0.9em;
+	color: #000;
+	margin: 0 auto;
+	text-align: center;
+}
+
+a {
+	border: none;
+}
+
 .admin-font {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.8em;

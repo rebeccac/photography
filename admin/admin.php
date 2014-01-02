@@ -3,23 +3,23 @@
 
 	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography - Admin</title>
-	<!-- <link rel="stylesheet" href="styles/admin_style.css">
-
-		<link href='http://fonts.googleapis.com/css?family=Julius+Sans+One|Quicksand:300,400|Cinzel:400,700,900|Open+Sans:400,600' rel='stylesheet' type='text/css'>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-	</head>
-	<body> -->
 <?php
 	include($root."includes/head.php");
 	include($root.'includes/nav.php');
 	include($root.'includes/header.php');
 	
-	include($root.'includes/main.php'); 
-	echo $root;
+	include($root.'includes/main-content.php'); 
 ?>
-	
-	<a href="images.php">Upload new front page photos</a>
+	<div class="admin-main">
+		<div class="admin-main-content">
+			<h2 class="admin">Admin Control Panel</h2>
+			<span class="admin-buttons">
+				<div class="admin-menu-option"><a href="images.php"><img src="img/upload_image.png"></a></div>
+				<div class="admin-menu-option"><img src="img/delete_images.png"></div>
+				<div class="admin-menu-option"><img src="img/gallery_admin.png"></div>
+				<div class="admin-menu-option"><img src="img/store_admin.png"></div>
+			</span>
+		</div>
 
  <?php
 include($root.'includes/footer.php');
