@@ -59,6 +59,12 @@ body {
 	height: 100%;
 }
 
+.admin-main {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+}
+
 @font-face
 {
 font-family: Prosto;
@@ -184,6 +190,12 @@ h1::first-letter {
 	font-size: 1.025em;
 }
 
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
 .clear {
 	clear: both;
 }
@@ -289,7 +301,7 @@ header {
 	margin: 0;
 }
 
-.main-front-page {
+.main-content {
 	position: absolute;
 	top: 10%;
 	height: 80%;
@@ -425,3 +437,31 @@ footer {
 	line-height: 1.2;
 }
 
+
+
+/* ---------- ADMIN ---------- */
+
+.admin-font {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.8em;
+	font-weight: 400;
+	color: #000;
+}
+
+.emphasis {
+	font-weight: 800;
+	color: #ff0000;
+}	
+
+input[type=text] {
+	width: auto;
+	height: 20px;
+	border: 1px solid #121214;
+}
+
+h2.admin {
+	padding: 30px 0 0 30px;
+	color: #555;
+}
+
+/* ---------- END OF ADMIN ---------- */

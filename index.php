@@ -7,7 +7,7 @@
 	include('includes/nav.php');
 	include('includes/header.php');
 	
-	include('includes/main-front-page.php'); 
+	include('includes/main-content.php'); 
 ?>
 	
 	<div class="landscape-main-content">
