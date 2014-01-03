@@ -1,5 +1,5 @@
 <?php 
-	include('rootconfig.php');
+	require ('common.php');
 	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography</title>
 <?php
@@ -8,6 +8,8 @@
 	include($root.'includes/header.php');
 	
 	include($root.'includes/main-content.php'); 
+
+	$conn = connect($config);
 ?>
 	
 	<div class="landscape-main-content">

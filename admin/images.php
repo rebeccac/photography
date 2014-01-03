@@ -1,7 +1,5 @@
 <?php 
-	include('../rootconfig.php');
-	// include('../../config.php');
-	require ($root.'includes/common.php');
+	require '../common.php';
 	include($root.'includes/dtd.php'); ?>
 	<title>Simon Cordingley Photography - Upload a Front Page Image</title>
 <?php

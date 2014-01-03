@@ -1,7 +1,5 @@
 <?php 
-	include('../rootconfig.php');
-	include('../../config.php');
-
+	require ('../common.php');
 	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography - Admin</title>
 <?php

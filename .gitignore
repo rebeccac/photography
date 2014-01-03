@@ -63,4 +63,5 @@ Thumbs.db
 
 piwigo/*.*
 
+rootconfig.php
 config.php
