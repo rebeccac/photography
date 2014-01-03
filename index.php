@@ -1,13 +1,13 @@
 <?php 
-	include_once('config.php');
-	include('includes/dtd.php');?>
+	include('rootconfig.php');
+	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography</title>
 <?php
-	include('includes/head.php');
-	include('includes/nav.php');
-	include('includes/header.php');
+	include($root.'includes/head.php');
+	include($root.'includes/nav.php');
+	include($root.'includes/header.php');
 	
-	include('includes/main-content.php'); 
+	include($root.'includes/main-content.php'); 
 ?>
 	
 	<div class="landscape-main-content">
@@ -26,5 +26,5 @@
 
 
  <?php
-include('includes/footer.php');
+include($root.'includes/footer.php');
  ?>

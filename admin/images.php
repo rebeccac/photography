@@ -1,5 +1,7 @@
 <?php 
-	include('../config.php');
+	include('../rootconfig.php');
+	// include('../../config.php');
+	require ($root.'includes/common.php');
 	include($root.'includes/dtd.php'); ?>
 	<title>Simon Cordingley Photography - Upload a Front Page Image</title>
 <?php
@@ -8,6 +10,8 @@
 	include($root.'includes/header.php');
 	
 	include($root.'includes/main-content.php'); 
+
+	$conn = connect($config);
 ?>
 	<div class="admin-main">
 		<div class="admin-main-content">

@@ -68,11 +68,6 @@ if (isset($_POST['submit'])) {
 	        move_uploaded_file($_FILES["file"]["tmp_name"], "../images/frontpage/" . $directory . $_FILES["file"]["name"]);
 	      
 	        displayThumbnail($photo);
-	      ?>
-	        <!-- <div>
-				<p class="admin-font"><span class="bold">Stored in: </span><span><?= "images/frontpage/" .$directory . $_FILES["file"]["name"]; ?></span></p>
-	        </div> -->
-	        <?php
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <?php 
-	include('config.php');
+	include('rootconfig.php');
 	include($root.'includes/dtd.php');?>
 	<title>Simon Cordingley Photography</title>
 <?php
