@@ -1,1 +1,0 @@
-If portrait or landscape directory is empty, have default photo for each stored elsewhere.
