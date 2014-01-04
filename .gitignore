@@ -63,5 +63,8 @@ Thumbs.db
 
 piwigo/*.*
 
+/extra-files/*.*
+multiple-box-images.html
+notes.txt
 rootconfig.php
 config.php
