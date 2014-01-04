@@ -56,44 +56,39 @@ function insertValuesDB($query, $bindings, $conn) {
 	$stmt->execute($bindings);
 }
 
-/*
-Selects a random record from the landscape table and returns its filename and alt text in an 
-array. If the table is empty, returns a default image stored outside the landscape photo directory.
-*/
-function randomLandscapeImage($conn) {
-	$result = queryDB("SELECT * FROM landscape ORDER BY RAND()",
-						array(),
-						$conn)[0];
-	if ( $result ) {
-		$landscapeImage = array(
-			'filename' => "images/frontpage/landscape/" . $result->landscape_filename,
-			'alttxt' => $result->landscape_alt_text );
-	} else {
-		$landscapeImage = array(
-			'filename' => "images/frontpage/katariina.jpg",
-			'alttxt' => "The Ruination of Katariina" );
-	}
-	return $landscapeImage;
-}
 
 /*
-Selects a random record from the portrait table and returns its filename and alt text in an 
-array. If the table is empty, returns a default image stored outside the portrait photo directory.
+Selects a random record from the given table and returns its filename and alt text in an 
+array. If the table is empty, returns a default image stored outside the table's photo directory.
 */
-function randomPortraitImage($conn) {
-	$result = queryDB("SELECT * FROM portrait ORDER BY RAND()",
-						array(),
-						$conn)[0];
-	if ( $result ) {
-		$portraitImage = array(
-			'filename' => "images/frontpage/portrait/" . $result->portrait_filename,
-			'alttxt' => $result->portrait_alt_text );
-	} else {
-		$portraitImage = array(
-			'filename' => "images/frontpage/ruins_of_katariina.jpg",
-			'alttxt' => "The Ruination of Katariina" );
+function randomImage($orientation, $conn) {
+	$allowedTables = array('landscape', 'portrait'); # only allow query to access $orientation tables in $allowedTables
+	if (in_array($orientation, $allowedTables)) {
+
+		$result = queryDB("SELECT * FROM {$orientation} ORDER BY RAND()",
+							array(),
+							$conn)[0];
+		if ( $result ) {
+			$randomImage = array(
+				'filename' => "images/frontpage/{$orientation}/{$result->landscape_filename}",
+				'alttxt' => $result->landscape_alt_text );
+		} else {
+			switch ($orientation) {
+	    		case "landscape":
+	        		$randomImage = array(
+						'filename' => "images/frontpage/katariina.jpg",
+						'alttxt' => "The Ruination of Katariina" );
+	        		break;
+	    		case "portrait":
+	        		$randomImage = array(
+						'filename' => "images/frontpage/ruins_of_katariina.jpg",
+						'alttxt' => "The Ruination of Katariina" );
+	        	break;
+			}
+		}	
+		return $randomImage;
 	}
-	return $portraitImage;
+	else die("Error");
 }
 
 

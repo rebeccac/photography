@@ -11,19 +11,19 @@
 
 	$conn = connect($config);
 
-	$landscapeImage = randomLandscapeImage($conn);
-	$portraitImage = randomPortraitImage($conn);
+	$landscape = randomImage('landscape', $conn);
+	$portrait = randomImage('portrait', $conn);
 ?>
 	<div class="landscape-main-content">
 
 		<div class="centred">
-			<img src="<?php echo $landscapeImage['filename']; ?>" alt="<?php echo $landscapeImage['alttxt']; ?> ">
+			<img src="<?php echo $landscape['filename']; ?>" alt="<?php echo $landscape['alttxt']; ?> ">
 		</div>
 
 	</div>
 	
 	<div class="portrait-main-content">
-			<img src="<?php echo $portraitImage['filename']; ?>" alt="<?php echo $portraitImage['alttxt']; ?> ">
+			<img src="<?php echo $portrait['filename']; ?>" alt="<?php echo $portrait['alttxt']; ?> ">
 	</div>
 
 	
