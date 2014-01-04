@@ -10,17 +10,20 @@
 	include($root.'includes/main-content.php'); 
 
 	$conn = connect($config);
+
+	$landscapeImage = randomLandscapeImage($conn);
+	$portraitImage = randomPortraitImage($conn);
 ?>
-	
 	<div class="landscape-main-content">
+
 		<div class="centred">
-			<img src="images/frontpage/katariina.jpg" alt="The Ruination of Fort Katariina">
+			<img src="<?php echo $landscapeImage['filename']; ?>" alt="<?php echo $landscapeImage['alttxt']; ?> ">
 		</div>
 
 	</div>
 	
 	<div class="portrait-main-content">
-			<img src="images/frontpage/ruins_of_katariina.jpg" alt="The Ruins of Katariina">
+			<img src="<?php echo $portraitImage['filename']; ?>" alt="<?php echo $portraitImage['alttxt']; ?> ">
 	</div>
 
 	
