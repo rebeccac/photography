@@ -23,8 +23,17 @@ function queryDB($query, $bindings, $conn) {
 	$stmt->setFetchMode(PDO::FETCH_OBJ);
 	$stmt->execute($bindings);
 	$results = $stmt->fetchAll();
-
 	return $results ? $results : false;
+}
+
+function insertValuesDB($query, $bindings, $conn) {
+	$stmt = $conn->prepare($query);
+	$stmt->setFetchMode(PDO::FETCH_OBJ);
+	$stmt->execute($bindings);
+}
+
+function displayThumbnail($photo, $width) {
+	echo '<img src="'.$photo.'" width = "'.$width.'px">';
 }
 
 

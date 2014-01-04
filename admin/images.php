@@ -6,19 +6,13 @@
 	include($root.'includes/head.php');
 	include($root.'includes/nav.php');
 	include($root.'includes/header.php');
-	
 	include($root.'includes/main-content.php'); 
-
+	
 	$conn = connect($config);
 
-	if ($conn) {
-
+	if ( !$conn ) {
+		echo "Cannot connect to the database. Please try again later.";
 	}
-	else {
-		echo "Could not connect to the database";
-	}
-
-	
 ?>
 	<div class="admin-main">
 		<div class="admin-main-content">
