@@ -11,6 +11,6 @@
 			&copy; Simon Cordingley 2013
 		</div>
 	</footer>	
-		<script src="http://rebeccacordingley.com/test/photography/scripts/script.js"></script>
+		<script src="http://rebeccacordingley.com/photography/scripts/script.js"></script>
 	</body>
 </html>

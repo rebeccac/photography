@@ -10,15 +10,22 @@ function connect($config) {
 						$config['DB_USERNAME'],
 						$config['DB_PASSWORD']);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "Connected to DB";
 		return $conn;
 	} 
 	catch(Exception $e) {
-		echo "Not connected to DB";
 		return false;
 	}
 }
 
+
+function queryDB($query, $bindings, $conn) {
+	$stmt = $conn->prepare($query);
+	$stmt->setFetchMode(PDO::FETCH_OBJ);
+	$stmt->execute($bindings);
+	$results = $stmt->fetchAll();
+
+	return $results ? $results : false;
+}
 
 
 ?>

@@ -10,6 +10,15 @@
 	include($root.'includes/main-content.php'); 
 
 	$conn = connect($config);
+
+	if ($conn) {
+
+	}
+	else {
+		echo "Could not connect to the database";
+	}
+
+	
 ?>
 	<div class="admin-main">
 		<div class="admin-main-content">
