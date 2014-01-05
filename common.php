@@ -1,7 +1,7 @@
 <?php
  require '/Applications/XAMPP/xamppfiles/htdocs/config/config.php'; # development path
 
-# require($_SERVER[DOCUMENT_ROOT]."/../config.php"); # production path
+// require($_SERVER[DOCUMENT_ROOT]."/../config.php"); # production path
 
 /* Connect to database */
 function connect($config) {
@@ -68,10 +68,12 @@ function randomImage($orientation, $conn) {
 		$result = queryDB("SELECT * FROM {$orientation} ORDER BY RAND()",
 							array(),
 							$conn)[0];
+		$filename = "{$orientation}_filename";
+		$alt_text = "{$orientation}_alt_text";
 		if ( $result ) {
 			$randomImage = array(
-				'filename' => "images/frontpage/{$orientation}/{$result->landscape_filename}",
-				'alttxt' => $result->landscape_alt_text );
+				'filename' => "images/frontpage/{$orientation}/{$result->$filename}",
+				'alttxt' => $result->$alt_text );
 		} else {
 			switch ($orientation) {
 	    		case "landscape":
@@ -89,6 +91,17 @@ function randomImage($orientation, $conn) {
 		return $randomImage;
 	}
 	else die("Error");
+}
+
+function deleteImage($orientation, $filename, $conn) {
+
+	$file = "../images/frontpage/{$orientation}/{$filename}";
+
+	if (file_exists($file)) {
+		unlink( $file );
+	} else {
+		echo "File does not exist";
+	}
 }
 
 
