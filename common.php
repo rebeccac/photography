@@ -122,8 +122,9 @@ function displayImages($orientation, $conn) {
  					</div> 
 			<?php	
 	    	}
-		} else {
-			echo "No {$orientation} images available";
+		} else { ?>
+			<div class="emptyDirectory">No <?php echo $orientation; ?> images available. The default image will be used for <?php echo $orientation; ?> orientation.</div>
+		<?php
 		}
 	}
 }

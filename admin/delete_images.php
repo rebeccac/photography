@@ -18,17 +18,26 @@
 		<div class="admin-main-content">
 
 	<h2 class="admin">Delete a front page photo</h2>
-	<form action=<?php echo $_SERVER['PHP_SELF']; ?>  method="post">
-	<?php displayImages('portrait', $conn);
-		  displayImages('landscape', $conn);
-	?>
-		<br><br>
-		<input type="submit" name="submit" value="Delete images">
-	</form>
-<?php 
-
- include('delete_files.php');
-
- ?>
+	<div class="displayImages">
+		<form action=<?php echo $_SERVER['PHP_SELF']; ?>  method="post">
+			<h3>Portrait</h3>
+			<div>	
+				<?php 
+				displayImages('portrait', $conn); ?>
+			</div>
+			<br>
+			<h3>Landscape</h3>
+			<div>	
+				<?php
+			    displayImages('landscape', $conn); ?>
+			</div>
+		
+			<br><br>
+			<input type="submit" name="submit" value="Delete images">
+		</form>
+	<?php 
+	 include('delete_files.php');
+	 ?>
+	 </div>
 	</div>
 <?php include($root.'includes/footer.php'); ?>

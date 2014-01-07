@@ -505,6 +505,24 @@ a {
 	color: #ff0000;
 }	
 
+.emptyDirectory {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.8em;
+	font-weight: 400;
+	padding-top: 20px;
+	color: #ff0000;
+}
+
+.displayImages {
+	margin: 30px;
+}
+
+/*.portrait,
+.landscape {
+	margin: 30px;
+	height: auto;
+}*/
+
 input[type=text] {
 	width: auto;
 	height: 20px;
@@ -519,6 +537,10 @@ h2.admin {
 h3.admin {
 	margin: 20px 0;
 	color: #ff0000;
+}
+
+h3.delete {
+	margin-left: 30px;
 }
 
 p.admin {

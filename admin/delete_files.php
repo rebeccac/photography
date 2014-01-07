@@ -15,5 +15,6 @@
 	 		}
  		}
  	}
+ 	header('location:delete_images.php');
  }
  ?>
