@@ -56,6 +56,14 @@ function insertValuesDB($query, $bindings, $conn) {
 	$stmt->execute($bindings);
 }
 
+function deleteValuesDB($query, $bindings, $conn) {
+	$stmt = $conn->prepare($query);
+	$stmt->setFetchMode(PDO::FETCH_OBJ);
+	$stmt->execute($bindings);
+	// $results = $stmt->fetchAll();
+	// return $results ? $results : false;
+}
+
 
 /*
 Selects a random record from the given table and returns its filename and alt text in an 
@@ -92,6 +100,34 @@ function randomImage($orientation, $conn) {
 	}
 	else die("Error");
 }
+
+
+function displayImages($orientation, $conn) {
+	$allowedTables = array('landscape', 'portrait'); # only allow query to access $orientation tables in $allowedTables
+	if (in_array($orientation, $allowedTables)) {
+		$images = getAllRows($orientation, $conn);
+
+		if ( $images ) { 
+			$filename = "{$orientation}_filename";
+			$alt_text = "{$orientation}_alt_text";
+			foreach ( $images as $image ) { ?>
+				
+				<div class="thumbnail">
+					<img src="<?= "../images/frontpage/{$orientation}/{$image[$filename]}" ?>" width="200px" alt="<?= $image[$alt_text]?>">
+					<br>
+<!-- 					<input type="checkbox" name="<?php echo $deleteImages ?>" value="<?php echo $image[$filename].":".$orientation ?>"><p class="admin">Delete photo</p>
+ -->				
+ 						<input type="checkbox" name="deleteImages[]" value="<?php echo $image[$filename].":".$orientation ?>"><p class="admin">Delete photo</p>
+
+ 					</div> 
+			<?php	
+	    	}
+		} else {
+			echo "No {$orientation} images available";
+		}
+	}
+}
+
 
 function deleteImage($orientation, $filename, $conn) {
 
