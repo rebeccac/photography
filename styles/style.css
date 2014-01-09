@@ -234,9 +234,8 @@ p {
 }
 
 .hidden-menu {
-	background-image:url('../images/nav.png'); /* PRODUCTION */
-/*	background-image:url('../photography/images/nav.png');
-*/	height: auto;
+	background-image:url('../images/nav.png'); 
+	height: auto;
 	display: none;
 	width: 170px;
 }

@@ -60,8 +60,6 @@ function deleteValuesDB($query, $bindings, $conn) {
 	$stmt = $conn->prepare($query);
 	$stmt->setFetchMode(PDO::FETCH_OBJ);
 	$stmt->execute($bindings);
-	// $results = $stmt->fetchAll();
-	// return $results ? $results : false;
 }
 
 
@@ -70,18 +68,15 @@ Selects a random record from the given table and returns its filename and alt te
 array. If the table is empty, returns a default image stored outside the table's photo directory.
 */
 function randomImage($orientation, $conn) {
-	$allowedTables = array('landscape', 'portrait'); # only allow query to access $orientation tables in $allowedTables
-	if (in_array($orientation, $allowedTables)) {
-
-		$result = queryDB("SELECT * FROM {$orientation} ORDER BY RAND()",
-							array(),
+	$allowedOrientations = array('landscape', 'portrait'); # only allow query to access $orientation tables in $allowedTables
+	if (in_array($orientation, $allowedOrientations)) {
+		$result = queryDB("SELECT * FROM photo WHERE orientation = :orientation ORDER BY RAND()",
+							array('orientation' => $orientation),
 							$conn)[0];
-		$filename = "{$orientation}_filename";
-		$alt_text = "{$orientation}_alt_text";
 		if ( $result ) {
 			$randomImage = array(
-				'filename' => "images/frontpage/{$orientation}/{$result->$filename}",
-				'alttxt' => $result->$alt_text );
+				'filename' => "images/frontpage/{$orientation}/{$result->filename}",
+				'alttxt' => $result->alt_text );
 		} else {
 			switch ($orientation) {
 	    		case "landscape":
@@ -102,24 +97,19 @@ function randomImage($orientation, $conn) {
 }
 
 
+/* Display images in the database on delete_images page */
 function displayImages($orientation, $conn) {
-	$allowedTables = array('landscape', 'portrait'); # only allow query to access $orientation tables in $allowedTables
-	if (in_array($orientation, $allowedTables)) {
-		$images = getAllRows($orientation, $conn);
-
+	$allowedOrientations = array('landscape', 'portrait'); # only allow query to access $orientation tables in $allowedTables
+	if (in_array($orientation, $allowedOrientations)) {
+		$images = queryDB("SELECT * FROM photo WHERE orientation = :orientation",
+							array('orientation' => $orientation), $conn);
 		if ( $images ) { 
-			$filename = "{$orientation}_filename";
-			$alt_text = "{$orientation}_alt_text";
-			foreach ( $images as $image ) { ?>
-				
+			foreach ( $images as $image ) {  ?>	
 				<div class="thumbnail">
-					<img src="<?= "../images/frontpage/{$orientation}/{$image[$filename]}" ?>" width="200px" alt="<?= $image[$alt_text]?>">
-					<br>
-<!-- 					<input type="checkbox" name="<?php echo $deleteImages ?>" value="<?php echo $image[$filename].":".$orientation ?>"><p class="admin">Delete photo</p>
- -->				
- 						<input type="checkbox" name="deleteImages[]" value="<?php echo $image[$filename].":".$orientation ?>"><p class="admin">Delete photo</p>
-
- 					</div> 
+					<img src="<?= "../images/frontpage/{$orientation}/{$image->filename}" ?>" width="200px" alt="<?= $image->alt_text?>">
+					<br>				
+ 					<input type="checkbox" name="deleteImages[]" value="<?php echo $image->filename.":".$orientation ?>"><p class="admin">Delete photo</p>
+ 				</div> 
 			<?php	
 	    	}
 		} else { ?>
@@ -130,12 +120,10 @@ function displayImages($orientation, $conn) {
 }
 
 
-function deleteImage($orientation, $filename, $conn) {
-
-	$file = "../images/frontpage/{$orientation}/{$filename}";
-
-	if (file_exists($file)) {
-		unlink( $file );
+/* Delete file from directory */
+function deleteImage($path, $conn) {
+	if (file_exists($path)) {
+		unlink( $path );
 	} else {
 		echo "File does not exist";
 	}

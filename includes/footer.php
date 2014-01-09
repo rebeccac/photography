@@ -1,4 +1,4 @@
-</div> <!-- closes .main -->
+</div>
 
 <footer>
 		<div class="social-media">
