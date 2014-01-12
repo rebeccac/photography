@@ -1,5 +1,5 @@
 <?php
- require '/Applications/XAMPP/xamppfiles/htdocs/config/config.php'; # development path
+  require '/Applications/XAMPP/xamppfiles/htdocs/config/config.php'; # development path
 
 // require($_SERVER[DOCUMENT_ROOT]."/../config.php"); # production path
 

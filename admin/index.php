@@ -4,9 +4,11 @@
 	<title>Simon Cordingley Photography - Admin</title>
 <?php
 	include($root."includes/head.php");
+	?>
+	<div class="container">
+	<?php
 	include($root.'includes/nav.php');
 	include($root.'includes/header.php');
-	
 	include($root.'includes/main-content.php'); 
 ?>
 	<div class="admin-main">

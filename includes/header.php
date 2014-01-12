@@ -1,5 +1,3 @@
-
-
 <header>
 	<h1>
 	Simon Cordingley Photography
