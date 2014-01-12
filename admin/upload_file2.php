@@ -1,7 +1,9 @@
 <?php
+
+
 if (isset($_POST['submit'])) {
 
-	$alttext = isset($_POST['alttext']) ? $_POST['alttext'] : '';
+	$alttxt = isset($_POST['alttext']) ? $_POST['alttext'] : '';
 
 	$allowedExts = array("jpeg", "jpg", "png", "JPG", "JPEG", "PNG");
 	$temp = explode(".", $_FILES["file"]["name"]);
@@ -28,24 +30,30 @@ if (isset($_POST['submit'])) {
 	    	$kb = number_format(($_FILES["file"]["size"] / 1024), 2, '.', ',');
 
 	    	if ($width > $height) {
-	    	$orientation = 'landscape';
+	    	$directory = 'landscape/';
 		    }
 		    else {
-		    	$orientation = 'portrait';	
+		    	$directory = 'portrait/';
+		    	
 		    }
-		    $photo = "../images/frontpage/{$orientation}/{$filename}";
-
+		    $photo = "../images/frontpage/" . $directory . $filename;
 
 		  	if (file_exists($photo)) {
 		      	echo $filename . " already exists. ";
 		    } else {
 		      	move_uploaded_file($temp, $photo);
 		      	if ( $conn ) {
-		      		insertValuesDB("INSERT INTO photo(orientation, filename, alt_text) VALUES (:orientation, :filename, :alt_text)",
-		      						array('orientation' => $orientation,
-		      							  'filename' => $filename,
-		      							  'alt_text' => $alttext),
-		      						$conn);
+		      		if ($directory == 'landscape/') {
+		      			insertValuesDB("INSERT INTO landscape (landscape_filename, landscape_alt_text) VALUES (:filename, :alttxt)",
+		      				array('filename' => $filename,
+		      					  'alttxt' => $alttxt),
+		      					  $conn);
+		      		} else if ($directory == 'portrait/') {
+		      			insertValuesDB("INSERT INTO portrait (portrait_filename, portrait_alt_text) VALUES (:filename, :alttxt)",
+		      				array('filename' => $filename,
+		      					  'alttxt' => $alttxt),
+		      					  $conn);
+		      		}
 		      	}
 		      	else {
 		      		echo "Cannot connect to the database. Please try again later.";
@@ -65,7 +73,7 @@ if (isset($_POST['submit'])) {
 				    <br>
 				    <span class="bold">Stored in: </span><span><?= $photo; ?></span>
 				    <br>
-				    <span class="bold">Alt text: </span><span><?= $alttext; ?></span>
+				    <span class="bold">Alt text: </span><span><?= $alttxt; ?></span>
 				    <br>		
 				    <br>
 				</p>

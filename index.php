@@ -17,13 +17,13 @@
 	<div class="landscape-main-content">
 
 		<div class="centred">
-			<img src="<?php echo $landscape['filename']; ?>" alt="<?php echo $landscape['alttxt']; ?> ">
+			<img src="<?php echo $landscape['filename']; ?>" alt="<?php echo $landscape['alttext']; ?> ">
 		</div>
 
 	</div>
 	
 	<div class="portrait-main-content">
-			<img src="<?php echo $portrait['filename']; ?>" alt="<?php echo $portrait['alttxt']; ?> ">
+			<img src="<?php echo $portrait['filename']; ?>" alt="<?php echo $portrait['alttext']; ?> ">
 	</div>
 
 	

@@ -12,7 +12,7 @@
 	 			deleteValuesDB("DELETE FROM photo WHERE filename = :filename AND orientation = :orientation",
 	 					array('filename' => $filename,
 	 						  'orientation' => $orientation), $conn);
-	 			deleteImage("../images/frontpage/{$orientation}/{$filename}");
+	 			deleteImage("../images/frontpage/{$orientation}/{$filename}", $conn);
 	 		}
  		}
  	}

@@ -76,18 +76,18 @@ function randomImage($orientation, $conn) {
 		if ( $result ) {
 			$randomImage = array(
 				'filename' => "images/frontpage/{$orientation}/{$result->filename}",
-				'alttxt' => $result->alt_text );
+				'alttext' => $result->alt_text );
 		} else {
 			switch ($orientation) {
 	    		case "landscape":
 	        		$randomImage = array(
 						'filename' => "images/frontpage/katariina.jpg",
-						'alttxt' => "The Ruination of Katariina" );
+						'alttext' => "The Ruination of Katariina" );
 	        		break;
 	    		case "portrait":
 	        		$randomImage = array(
 						'filename' => "images/frontpage/ruins_of_katariina.jpg",
-						'alttxt' => "The Ruination of Katariina" );
+						'alttext' => "The Ruination of Katariina" );
 	        	break;
 			}
 		}	
