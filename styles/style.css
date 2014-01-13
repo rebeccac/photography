@@ -181,10 +181,10 @@ a {
 
 h1 {
 	font-family: 'Julius Sans One', serif;
-	font-size: 2em;
+	/*font-size: 2em;*/
 	font-weight: 400;
 	color: #333;
-	padding: 30px 10px 0 0;
+	/*padding: 30px 10px 0 0;*/
 }
 
 h1::first-letter {
@@ -219,11 +219,48 @@ p {
 
 
 
-/* NAVIGATION */
 
-/* ---------- DROPDOWN MENU ---------- */
-@media screen and (orientation:landscape) {
 
+
+
+header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+	}
+
+
+.main-content {
+	position: absolute;
+	width: 100%;
+}
+
+.main {
+	position: absolute;
+	height: auto;
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+
+
+@media only screen and (orientation:landscape), only screen and (min-width: 850px), only screen and (min-device-width: 850px) {
+	
+	
+
+
+
+	/* ---------- DROPDOWN MENU ---------- */
 	.mobile-nav {
 		display: none;
 	}
@@ -306,16 +343,21 @@ p {
 	.menuitem:hover + .contact-border {
 	    visibility: visible;
 	}
+	/* ---------- END DROPDOWN MENU ---------- */
+
 
 }
 
-/* ---------- END DROPDOWN MENU ---------- */
 
 
-/* ---------- MOBILE MENU ---------- */
 
-@media screen and (orientation:portrait) {
+
+@media only screen and (orientation:portrait), only screen and (max-width: 849px), only screen and (max-device-width: 849px) {
+
+
+
 	
+	/* ---------- MOBILE MENU ---------- */
 	.dropdown-menu {
 		display: none;
 	}
@@ -328,8 +370,12 @@ p {
 	width: 100%;
 	position: absolute;
 	left: 0;
+	top: 50px;
 	}
 
+	nav ul li { 
+	text-align: left;
+	}
 	#pull {
 	height:2em;
 	display:block;
@@ -358,7 +404,6 @@ p {
 	padding-right:10px;
 	font-size:18px;
 	}
-
 
 	#mobnav,
 	#mobnav ul,
@@ -397,7 +442,7 @@ p {
 	}
 
 	#mobnav > ul > li > a > span {
-	padding:5px 0 5px 10px;
+	padding:5px 20px;
 	display:block;
 	font-size:13px;
 	font-weight:300
@@ -415,64 +460,175 @@ p {
 	color: #b2aea5;
 	}
 
-	#mobnav span.cnt {
+	/*#mobnav span.cnt {
 	position:absolute;
 	top:8px;
 	right:15px;
 	padding:0;
 	margin:0;
 	background:none
-	}
+	}*/
 
-	#mobnav ul ul {
+	/*#mobnav ul ul {
 	display:none
 	}
 
 	#mobnav ul ul li {
 	border:1px solid #bebebe;
 	border-top:0
-	}
+	}*/
 
-	#mobnav ul ul a {
+	/*#mobnav ul ul a {
 	padding:10px;
 	display:block;
 	color:#fff;
 	font-size:13px
+	}*/
+	/* ---------- END MOBILE MENU ---------- */
+
+}
+
+
+
+@media only screen and (orientation:landscape) {
+
+
+
+	header.mobile {
+		display: none;
 	}
 
-}
-
-/* ---------- END MOBILE MENU ---------- */
-
-
-/* END OF NAVIGATION */
-
-
-
-header {
-	position: absolute;
-	top: 0;
-	width: 100%;
+	header.desktop {
 	height: 10%;
-	text-align: right;
-	padding: 0;
-	margin: 0;
+	}	
+
+
+	h1 {
+	/*font-family: 'Julius Sans One', serif;*/
+	font-size: 2em;
+	/*font-weight: 400;
+	color: #333;*/
+	padding: 30px 10px 0 0;
+	}
+
+	/*h1::first-letter {
+		font-size: 1.025em;
+	}*/
+
+
+
+
+
+	.main-content {
+		top: 10%;
+		height: 80%;
+	}
+
+	.main {
+		top: 10%;
+		padding-bottom: 10%;
+	}
+
+
+
+
+	/* Landscape front page photo */
+
+	.portrait-main-content {
+		display: none;
+	}
+
+	.landscape-main-content {
+		display: table;
+		height: 100%;
+	}
+
+	.centred {
+	  display: table-cell;
+	  vertical-align: middle;
+	  width: 100%;
+	}
+
+	.centred img {
+		width: 100%;
+	    height: auto;
+	}
+
+	/* End of landscape front page photo */
+
 }
 
-.main-content {
-	position: absolute;
-	top: 10%;
-	width: 100%;
-	height: 80%;
+
+@media only screen and (orientation:portrait) {
+
+
+	header.desktop {
+	display: none;
+	}
+
+	header.mobile {
+	height: 15%;
+	}
+
+
+
+
+	h1 {
+	/*font-family: 'Julius Sans One', serif;*/
+	font-size: 1.5em;
+	/*font-weight: 400;
+	color: #333;*/
+	padding: 10px 7px 0 0;
+	}
+
+	/*h1::first-letter {
+		font-size: 1.025em;
+	}*/
+
+
+
+
+
+
+
+	.main-content {
+	top: 15%;
+	height: 75%;
+	}
+
+	.main {
+		top: 15%;
+		padding-bottom: 15%;
+	}
+
+
+
+/* Portrait front page photo */
+	
+	.landscape-main-content {
+		display: none;
+	}
+
+	.portrait-main-content {
+		min-width: 100%;
+		height: 100%;
+	}
+
+	.portrait-main-content img {
+		display: block;
+		margin: 0 auto;
+		width: auto;
+		height: 100%;
+	}
+
+	/* End of portrait front page photos */
 }
 
-.main {
-	position: absolute;
-	top: 10%;
-	/*height: 80%;*/
-	height: auto;
-	padding-bottom: 10%;
-}
+
+/* ~~~~~~~~~~~~~~~~~~~~~ END OF MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
 
 
 
@@ -538,55 +694,13 @@ footer p {
 
 /* ---------- MEDIA QUERIES ---------- */
 
-/* Landscape */
-@media screen and (orientation:landscape) {
-    /* Landscape front page photo */
-	
-	.portrait-main-content {
-		display: none;
-	}
 
-	.landscape-main-content {
-		display: table;
-		height: 100%;
-	}
 
-	.centred {
-	  display: table-cell;
-	  vertical-align: middle;
-	  width: 100%;
-	}
 
-	.centred img {
-		width: 100%;
-	    height: auto;
-	}
 
-	/* End of landscape front page photo */
-}
 
-/* Portrait */
-@media screen and (orientation:portrait) {
-	/* Portrait front page photo */
-	
-	.landscape-main-content {
-		display: none;
-	}
 
-	.portrait-main-content {
-		min-width: 100%;
-		height: 100%;
-	}
 
-	.portrait-main-content img {
-		display: block;
-		margin: 0 auto;
-		width: auto;
-		height: 100%;
-	}
-
-	/* End of portrait front page photos */
-}
 
 /* ---------- END MEDIA QUERIES ---------- */
 
