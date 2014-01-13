@@ -72,7 +72,5 @@ config.php
 /admin/styles/.
 /styles/nav.png
 nav.png
-/styles/style2.css
-style.css
 /admin/deleteimages.php
 
